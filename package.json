@@ -10,13 +10,21 @@
     "husky": "^9.1.7",
     "lint-staged": "^15.5.2",
     "prettier": "^3.5.3",
+    "stylelint": "^16.19.1",
+    "stylelint-config-prettier": "^9.0.5",
+    "stylelint-prettier": "^5.0.3",
     "turbo": "^2.5.3"
   },
   "lint-staged": {
-    "*.{js,ts,tsx}": [
+    "**/*.{ts,tsx,js,jsx}": [
       "eslint --fix",
       "prettier --write"
-    ]
+    ],
+    "**/*.{css,scss}": [
+      "stylelint --fix",
+      "prettier --write"
+    ],
+    "**/*.{json,md,yml}": "prettier --write"
   },
   "scripts": {
     "prepare": "husky install",
